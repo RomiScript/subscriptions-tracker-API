@@ -2,7 +2,7 @@ Subscription Tracker API
 Una API RESTful desarrollada con Express.js y MongoDB para el seguimiento y gestión de suscripciones. Este proyecto fue desarrollado como parte de la formación en Node.js de la diplomatura full-stack de la UTN, implementando operaciones CRUD completas con autenticación JWT.
 
 📋 Descripción del Proyecto:
-Esta API permite a los usuarios gestionar sus suscripciones a diversos servicios, realizar un seguimiento de fechas de renovación, costos y categorías. Casi abandoné el proyecto en varias ocasiones debido a la complejidad que me autoimpuse al intentar optimizar cada detalle, pero finalmente logré completarlo con una arquitectura sólida y organizada.
+Esta API permite a los usuarios gestionar sus suscripciones a diversos servicios, realizar un seguimiento de fechas de renovación, costos y categorías. Casi abandoné el proyecto en varias ocasiones, pero finalmente logré completarlo con una arquitectura sólida y organizada.
 
 Nota importante: Este proyecto parte del código base proporcionado por el profesor Gabriel Alberini
 Toda su instrucción durante las clases fueron invaluables para mi entendimiento en la materia.
