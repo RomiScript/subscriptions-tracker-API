@@ -6,6 +6,7 @@ import { PORT } from './config/env.js';
 import userRouter from './routes/user.routes.js';
 import subscriptionRouter from './routes/subscription.routes.js';
 import authRouter from './routes/auth.routes.js'
+import connectToDataBase from './database/mongodb.js';
 
 
 const app = express();
@@ -18,11 +19,12 @@ app.get('/', (req, res) => {
     res.send('Bienvenidos a mi API Tracker de Subscripciones');
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async() => {
     console.log(` Subscription Tracker API runing on http://localhost:${PORT}`);
+    await connectToDataBase();
 });
 
 export default app;
 
-//En este momento, intento correr la app por primera vez.
+//En este momento (19/10), intento correr la app por primera vez.
 //Anda bien. 
