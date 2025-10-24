@@ -119,5 +119,5 @@ El uso de HTTPie resultó más eficiente que Postman para testing rápido en ter
 Desarrollado como proyecto académico, demostrando la implementación de una API RESTful completa con Express.js y MongoDB, partiendo de una base proporcionada pero evolucionando hacia una arquitectura propia y organizada.
 
 Estado del proyecto: Completado y funcional
-Última actualización: Octubre 2024
+Última actualización: Octubre 2025
 
