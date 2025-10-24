@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-// eslint-disable-next-line no-unused-vars
+//eslint-disable-next-line no-unused-vars
 const subscriptionSchema = new mongoose.Schema({
     name: {
         type: String, required: [true, 'El nombre es obligatorio'],
@@ -82,7 +82,6 @@ const subscriptionSchema = new mongoose.Schema({
 
 renewalDate: {
   type: Date,
-  required: true,
   validate: {
     validator: function (value) {
       return value > this.startDate;
@@ -97,3 +96,34 @@ user: {
     index: true,
 }
 }, { timestamps: true});
+
+// Antes de guardar una suscripción, verifico si el campo `renewalDate` no fue provisto.
+// En ese caso, calculo automáticamente la fecha de renovación en función de la frecuencia elegida.
+// Defino un objeto `renewalPeriods` que representa los distintos intervalos posibles
+// (diario, semanal, mensual y anual) expresados en cantidad de días.
+// Luego, parto desde la fecha de inicio (`startDate`) y le sumo la cantidad de días
+// correspondiente a la frecuencia seleccionada. De esta forma, el sistema completa
+// automáticamente la próxima fecha de renovación, garantizando coherencia entre los datos.
+// eslint-disable-next-line no-unused-vars
+subscriptionSchema.pre('save', function (next) {
+    if(!this.renewalDate) {
+        const renewalPeriods = {
+            daily: 1,
+            weekly: 7,
+            monthly: 30,
+            yearly: 365,
+
+        };
+        this.renewalDate = new Date(this.startDate);
+        this.renewalDate.setDate(this.renewalDate.getDate() + renewalPeriods[this.frequency]);
+    }
+    //Actualizo el estado de la subscripción si la fecha de renovación ya pasó.
+    if(this.renewalDate < new Date()) {
+        this.status = 'expired';
+    }
+    next();
+});
+
+const subscription = mongoose.model('Subscription', subscriptionSchema);
+
+export default subscription;

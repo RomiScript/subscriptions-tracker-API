@@ -2,20 +2,37 @@ import { Router } from "express";
 
 const subscriptionRouter = Router();
 
-subscriptionRouter.get('/', (req, res) => res.send({title: 'Get all subscriptions'}));
+subscriptionRouter.get('/', (req, res) => 
+  res.send({ title: 'Obtener todas las suscripciones' })
+);
 
-subscriptionRouter.get('/:id', (req, res) => res.send({title: 'Get subscription details'}));
+subscriptionRouter.get('/:id', (req, res) => 
+  res.send({ title: 'Obtener detalles de la suscripción' })
+);
 
-subscriptionRouter.post('/', (req, res) => res.send({title: 'Create new subscription'}));
+subscriptionRouter.post('/', (req, res) => 
+  res.send({ title: 'Crear nueva suscripción' })
+);
 
-subscriptionRouter.put('/:id', (req, res) => res.send({title: 'Update subscription'}));
+subscriptionRouter.put('/:id', (req, res) => 
+  res.send({ title: 'Actualizar suscripción' })
+);
 
-subscriptionRouter.delete('/:id', (req, res) => res.send({title: 'Delete subscription'}));
+subscriptionRouter.delete('/:id', (req, res) => 
+  res.send({ title: 'Eliminar suscripción' })
+);
 
-subscriptionRouter.get('/user/:id', (req, res) => res.send({title: 'Get all user subscriptions'}));
+subscriptionRouter.get('/user/:id', (req, res) => 
+  res.send({ title: 'Obtener todas las suscripciones del usuario' })
+);
 
-subscriptionRouter.put('/:id/cancel', (req, res) => res.send({title: 'Cancel subscription'}));
+subscriptionRouter.put('/:id/cancel', (req, res) => 
+  res.send({ title: 'Cancelar suscripción' })
+);
 
-subscriptionRouter.get('/next-renewals', (req, res) => res.send({title: 'Get upcoming renewals'}));
+subscriptionRouter.get('/next-renewals', (req, res) => 
+  res.send({ title: 'Obtener próximas renovaciones' })
+);
+
 
 export default subscriptionRouter;
