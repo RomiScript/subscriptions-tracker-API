@@ -1,12 +1,12 @@
-import { Router }  from "express";
-
+import { Router }  from 'express';
+import authorize from '../middlewares/auth.middleware.js';
+import { getUsers, getUser } from '../controllers/user.controller.js';
 
 const userRouter = Router();
 
-//En esta sección puse los títulos en inglés para que quede clara mi comprensión del uso de los métodos HTTP, no es inconsistencia, todos estarán en inglés luego de la evaluación de mi trabajo antes de ir al portfolio.
-userRouter.get('/', (req, res) => (res.send( {title: 'GET all users'}))); 
+userRouter.get('/', getUsers); 
 
-userRouter.get('/:id', (req, res) => (res.send( {title: 'GET user by ID'}))); 
+userRouter.get('/:id', authorize, getUser); 
 
 userRouter.post('/', (req, res) => (res.send( {title: 'CREATE new user'}))); 
 

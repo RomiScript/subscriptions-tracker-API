@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Router } from "express";
 
 const subscriptionRouter = Router();
@@ -10,7 +11,7 @@ subscriptionRouter.get('/:id', (req, res) =>
   res.send({ title: 'Obtener detalles de la suscripción' })
 );
 
-subscriptionRouter.post('/', (req, res) => 
+subscriptionRouter.post('/', authorize, (req, res) => 
   res.send({ title: 'Crear nueva suscripción' })
 );
 
