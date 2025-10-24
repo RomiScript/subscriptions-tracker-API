@@ -1,39 +1,34 @@
-/* eslint-disable no-undef */
+import authorize from "../middlewares/auth.middleware.js";
 import { Router } from "express";
+import { 
+  getAllSubscriptions, 
+  getSubscription, 
+  createSubscription, 
+  updateSubscription, 
+  deleteSubscription, 
+  getUserSubscriptions 
+} from "../controllers/subscription.controller.js";
 
 const subscriptionRouter = Router();
 
-subscriptionRouter.get('/', (req, res) => 
-  res.send({ title: 'Obtener todas las suscripciones' })
-);
 
-subscriptionRouter.get('/:id', (req, res) => 
-  res.send({ title: 'Obtener detalles de la suscripción' })
-);
+subscriptionRouter.get('/', getAllSubscriptions);
 
-subscriptionRouter.post('/', authorize, (req, res) => 
-  res.send({ title: 'Crear nueva suscripción' })
-);
+subscriptionRouter.get('/:id', authorize, getSubscription);
+subscriptionRouter.post('/', authorize, createSubscription);
+subscriptionRouter.put('/:id', authorize, updateSubscription);
+subscriptionRouter.delete('/:id', authorize, deleteSubscription);
+subscriptionRouter.get('/user/:id', authorize, getUserSubscriptions);
 
-subscriptionRouter.put('/:id', (req, res) => 
-  res.send({ title: 'Actualizar suscripción' })
-);
 
-subscriptionRouter.delete('/:id', (req, res) => 
-  res.send({ title: 'Eliminar suscripción' })
-);
+subscriptionRouter.put('/:id/cancel', authorize, updateSubscription);
 
-subscriptionRouter.get('/user/:id', (req, res) => 
-  res.send({ title: 'Obtener todas las suscripciones del usuario' })
-);
 
-subscriptionRouter.put('/:id/cancel', (req, res) => 
-  res.send({ title: 'Cancelar suscripción' })
+subscriptionRouter.get('/next-renewals', authorize, (req, res) => 
+  res.status(501).json({ 
+    success: false, 
+    message: 'Endpoint en desarrollo - Próximas renovaciones' 
+  })
 );
-
-subscriptionRouter.get('/next-renewals', (req, res) => 
-  res.send({ title: 'Obtener próximas renovaciones' })
-);
-
 
 export default subscriptionRouter;
