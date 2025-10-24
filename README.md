@@ -175,7 +175,8 @@ javascript
 }
 🧪 Testing con HTTPie
 Ejemplos de comandos para testing:
-bash
+
+
 # Registro de usuario
 http POST http://localhost:3000/api/v1/auth/sign-up name="Maria Garcia" email="maria@example.com" password="password123"
 
