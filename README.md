@@ -19,9 +19,9 @@ Validación: Mongoose validation
 
 Testing: HTTPie (preferido sobre Postman por su simplicidad en terminal)
 
-🗂 Estructura del Proyecto
-text
-EXPLORADOR  
+🗂 Estructura del Proyecto:
+
+EXPLORER
 TRACKER-UTN-NODELS/
 ├── config/
 │   ├── env.js
