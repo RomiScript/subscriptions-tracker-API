@@ -21,8 +21,9 @@ Testing: HTTPie (preferido sobre Postman por su simplicidad en terminal)
 
 🗂 Estructura del Proyecto:
 
-EXPLORER
-TRACKER-UTN-NODELS/
+EXPLORER:
+
+TRACKER-UTN-NODEjS/
 ├── config/
 │   ├── env.js
 │   └── arcjet.js
@@ -47,8 +48,8 @@ TRACKER-UTN-NODELS/
 ├── .env.production.local
 ├── app.js
 └── package.json
-🚀 Instalación y Configuración
-Prerrequisitos
+
+Prerrequisitos:
 Node.js (v16 o superior)
 
 MongoDB (local o Atlas)
@@ -58,7 +59,8 @@ HTTPie (para testing)
 
 
 
-📚 Documentación de la API
+📚 Documentación de la API:
+
 Autenticación
 Registrar usuario
 http
