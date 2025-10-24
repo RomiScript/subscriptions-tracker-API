@@ -4,7 +4,7 @@ Una API RESTful desarrollada con Express.js y MongoDB para el seguimiento y gest
 📋 Descripción del Proyecto:
 Esta API permite a los usuarios gestionar sus suscripciones a diversos servicios, realizar un seguimiento de fechas de renovación, costos y categorías. Casi abandoné el proyecto en varias ocasiones debido a la complejidad que me autoimpuse al intentar optimizar cada detalle, pero finalmente logré completarlo con una arquitectura sólida y organizada.
 
-Nota importante: Este proyecto parte del código base proporcionado por el profesor Gabriel Alberini, pero fue completamente reestructurado y organizado en una arquitectura de carpetas modular para mejorar la mantenibilidad y escalabilidad.
+Nota importante: Este proyecto parte del código base proporcionado por el profesor Gabriel Alberini
 Toda su instrucción durante las clases fueron invaluables para mi entendimiento en la materia.
 🛠 Tecnologías Utilizadas
 Backend: Node.js + Express.js
