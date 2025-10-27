@@ -71,7 +71,7 @@ export const signIn = async (req, res, next) => {
     
     const user = await User.findOne({ email }).select('+password');
     if (!user) {
-      const error = new Error('Credenciales inválidas'); // ✅ Mejor mensaje
+      const error = new Error('Credenciales inválidas'); 
       error.statusCode = 401;
       throw error;
     }
